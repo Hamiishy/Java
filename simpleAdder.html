@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Numbers</h2>
+
+<h1 id="demo"></h1>
+
+<form>
+    <input id="num1" type="number" placeholder="Enter first number">
+    <input id="num2" type="number" placeholder="Enter second number">
+    <button type="button" onclick="adding()">Calculate</button>
+</form>
+
+<script>
+    function adding() {
+        var x = Number(document.getElementById("num1").value);
+        var y = Number(document.getElementById("num2").value);
+        
+    
+        var z = x + y;
+        
+        
+        document.getElementById("demo").innerHTML = "Result: " + z;
+    }
+</script>
+
+</body>
+</html>

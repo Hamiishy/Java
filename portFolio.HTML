@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+<form>
+    <input id="markA" type="number" placeholder="Enter analysis mark">
+    <input id="markD" type="number" placeholder="Enter design mark">
+    <input id="markI" type="number" placeholder="Enter Implementation mark">
+    <input id="markE" type="number" placeholder="Enter evaluation mark">
+
+    <button type="button" onclick="gradeCalc()">calculate</button>
+    
+</form>
+<script>
+    placetoput=document.getElementById("demo");
+
+
+    function gradeCalc(){
+        var x = Number(document.getElementById("markA").value);
+        var y = Number(document.getElementById("markD").value);
+        var z = Number(document.getElementById("markI").value);
+        var a = Number(document.getElementById("markE").value);
+        var t = x + y + z + a;
+
+        if (t >= 80) {
+                result = "A*";
+                dif = 0
+            }
+            else if (t >= 67) {
+                result = "A";
+                var dif = 67 - t
+            }
+            else if (t >= 54) {
+                result = "B";
+                var dif = 54 - t
+            }
+            else if (t >= 41) {
+                result = "C";
+                var dif = 41 - t
+            }
+            else if (t >= 31) {
+                result = "D";
+                var dif = 31 - t
+            }
+            else if (t >= 22) {
+                result = "E";
+                var dif = 22 - t
+            }
+            else {
+                result = "Fail";
+    }
+    document.getElementById("demo").innerHTML = "Your grade is: " + result + "<br>" + "You are " + Math.abs(dif) + " marks away from the next grade boundary.";
+        }
+    
+    
+
+</script>
+    
+</body>
+</html>
