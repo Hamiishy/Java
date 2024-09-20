@@ -8,15 +8,37 @@
 <body>
     <p id="demo"></p>
     <form>
-        <input id="non" type="number" placeholder="Enter number of numbers you want to average">
-        w
+        
         <button type="button" onclick="avgCalc()">Calculate average</button>
     </form>
     <script>
         placetoput=document.getElementById("demo");
-        var count = Number(prompt("How many numbers do you want to enter?"));
 
-        function avgCalc
+
+        function avgCalc(){
+            var count = Number(prompt("How many numbers do you want to enter?"));
+            if(isNaN(count)|| count <= 0){
+                document.getElementById("demo").innerHTML = "Please enter valid input"
+            }
+            var numbers = [];
+            var total = 0;
+
+            var i = 0
+            while (i < count){
+                var num = Number(prompt("Enter number " + (i + 1) + ":"));
+                i++;
+            
+                if(isNaN(num)|| num <= 0){
+                    document.getElementById("demo").innerHTML = "Please enter valid input"
+            }
+        
+                numbers.push(num)
+                total += num;
+        }
+            var average = total / count;
+            document.getElementById("demo").innerHTML = "The average is" + average
+        }
+        
     </script>
     
 </body>

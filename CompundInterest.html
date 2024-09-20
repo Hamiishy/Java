@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <form>
+        <input id="interest" type="number" placeholder="Enter interest rate">
+        <input id="DAM" type = "number" placeholder="Enter desired amount of money">
+        <input id="cur" type = "number" placeholder ="How much money do you have">
+        <button type="button" onclick="Calc()">Calculate how many years</button>
+
+    </form>
+
+    <script>
+        function Calc(){
+            var interestRate = Number(document.getElementById("interest").value);
+            var desiredAmount = Number(document.getElementById("DAM").value);
+            var currentAmount = Number(document.getElementById("cur").value);
+            var interest = interestRate / 100
+            var years = 0
+            document.getElementById("demo").innerHTML = "";
+            
+
+                while (currentAmount < desiredAmount){
+                    currentAmount += currentAmount * interest;
+                    years ++;
+                    document.getElementById("demo").innerHTML +=
+                    "Year " + years + ": Starting balance = " + currentAmount.toFixed(2) + "<br>";
+                    
+                }
+             }
+    </script>
+    
+</body>
+</html>
